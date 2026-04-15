@@ -1,5 +1,14 @@
 # Ultrasound-CLIP
 
+## News
+
+- Our paper **"Ultrasound-CLIP"** has been accepted to **CVPR 2026**.
+
+## Resources
+
+- **Dataset:** [US-365K on Hugging Face](https://huggingface.co/datasets/JJY-0823/US-365K)
+- **Paper (arXiv):** [http://arxiv.org/abs/2604.01749](http://arxiv.org/abs/2604.01749)
+
 This repository contains a set of modules designed to enhance CLIP text representations using **heterogeneous tag-graph encoding** and **semantic similarity supervision**, improving fine-grained cross-modal alignment between images and text.
 
 It is suitable for image-text retrieval, matching, or contrastive learning scenarios with structured labels (e.g., multi-task medical annotations).
@@ -73,17 +82,3 @@ prediction = model(images, texts, graphs=graphs)
 semantic_loss_fn = SemanticLoss(args, similarity_weight=1.0, temperature=0.07)
 loss_sm = semantic_loss_fn(prediction, similarity_matrix)
 ```
-
-## Data Format Assumptions
-
-- Each record in `full_data` should include at least:
-  - `media_name`
-  - `Diagnosis`
-  - `Body_system_level`, `Organ_level`, `Shape`, `Margins`, `Echogenicity`,
-    `InternalCharacteristics`, `PosteriorAcoustics`, `Vascularity`
-- Each task field can be either a string or a list of strings (internally normalized to list format).
-
-## Notes
-
-- The code includes multiple robustness safeguards (zero-edge graph fallback, empty-graph placeholders, NaN/Inf cleanup, safe normalization thresholds) to improve training stability.
-- If you plan to release only these 6 files, it is recommended to also provide a minimal runnable training script so others can reproduce the full pipeline.
