@@ -9,6 +9,7 @@
 - **Dataset:** [US-365K on Hugging Face](https://huggingface.co/datasets/JJY-0823/US-365K)
 - **Paper (arXiv):** [http://arxiv.org/abs/2604.01749](http://arxiv.org/abs/2604.01749)
 - **pre-trained weights:**[here](https://1drv.ms/f/c/48250be4328ce7ab/IgCnIA0--KugSoW0japEO8HaAW6koYf9YVNnB9vQiqeq_O8?e=c7xe4J)
+
 This repository contains a set of modules designed to enhance CLIP text representations using **heterogeneous tag-graph encoding** and **semantic similarity supervision**, improving fine-grained cross-modal alignment between images and text.
 
 It is suitable for image-text retrieval, matching, or contrastive learning scenarios with structured labels (e.g., multi-task medical annotations).
